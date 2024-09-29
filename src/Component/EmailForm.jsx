@@ -1,7 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./email.css";
 
 const EmailForm = () => {
+    const[email, setEmail] = useState('');
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    }
+
+    const handleSubmit = async (event) =>{
+        event.preventDefault();
+
+        const newEmail = email.trim();
+        if (newEmail.trim() === "") {
+            throw new Error("Email is required");
+        }
+    }
+
     return (
         <form className='email-container'>
             <h1>Email Form</h1>

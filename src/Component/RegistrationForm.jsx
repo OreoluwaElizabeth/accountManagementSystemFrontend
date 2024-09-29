@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './registration.css';
 
 const RegistrationForm = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     return (
         <form className='registration-form'>
             <h1>Registration</h1>
